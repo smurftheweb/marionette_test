@@ -4,6 +4,9 @@ export default Marionette.Application.extend({
   region: '#app',
 
   onStart() {
-    this.showView(new StartView())
+    var start = new StartView();
+    this.showView(start);
+
+    start.collection.add({ author: "Test", text: "Hello" });
   }
 });
